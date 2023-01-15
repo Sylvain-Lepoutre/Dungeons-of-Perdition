@@ -1,0 +1,21 @@
+{
+  "name": "dungeons-of-perdition",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.8.2",
+    "sharp": "^0.31.3"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1"
+  }
+}

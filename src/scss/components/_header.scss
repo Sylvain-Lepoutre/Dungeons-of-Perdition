@@ -1,0 +1,24 @@
+@use '../var';
+
+.header {
+    text-align: center;
+    background-image: url(https://via.placeholder.com/1980x300);
+
+    &__group {
+        margin: 2rem 0;
+    }
+
+    &__title {
+        background-color: green;
+        font-size: 4rem;
+        font-weight: bold;
+        color: var.$color-main;
+    }
+
+    &__sub {
+        background-color: yellow;
+        font-size: 3rem;
+        font-weight: bold;
+        color: var.$color-main;
+    }
+}
