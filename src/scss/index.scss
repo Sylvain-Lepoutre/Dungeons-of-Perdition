@@ -1,5 +1,9 @@
 @use 'reset-css';
 
+@use './font';
 @use './global.scss';
 
-@use './components/header';
+@use './components/banner';
+@use './components/main-nav';
+@use './components/segment';
+@use './components/card';

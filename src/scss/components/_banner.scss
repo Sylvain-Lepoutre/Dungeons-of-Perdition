@@ -1,23 +1,26 @@
 @use '../var';
 
-.header {
+.banner {
     text-align: center;
     background-image: url(https://via.placeholder.com/1980x300);
+    font-family: Chiller;
 
     &__group {
-        margin: 2rem 0;
+        margin: 1rem 0;
+        letter-spacing: 1rem;
     }
 
     &__title {
         background-color: green;
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: bold;
         color: var.$color-main;
+        
     }
 
     &__sub {
-        background-color: yellow;
-        font-size: 3rem;
+        background-color: red;
+        font-size: 1.5rem;
         font-weight: bold;
         color: var.$color-main;
     }
