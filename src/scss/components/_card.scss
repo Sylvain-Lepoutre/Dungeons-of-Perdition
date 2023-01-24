@@ -1,9 +1,14 @@
 .card {
     margin: 1rem auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: grey;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    overflow: hidden;
 
 
     &__container {
-        background-color: teal;
         display: grid;
         margin: auto;
         
