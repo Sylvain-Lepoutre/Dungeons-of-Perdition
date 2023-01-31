@@ -1,9 +1,10 @@
 @use '../var';
 
 .banner {
+    font-family: Chiller;
     text-align: center;
     background-image: url(https://via.placeholder.com/1980x300);
-    font-family: Chiller;
+    
 
     &__group {
         margin: 1rem 0;

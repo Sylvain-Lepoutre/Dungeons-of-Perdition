@@ -48,19 +48,15 @@
         <main>
             <section class="segment">  <!-- Section pour les dernières photos -->
                 <a class="segment__link" href="./photos.html"><h2 class="segment__title">Photos récentes</h2></a>   <!-- Lien qui mène à la gallerie photo -->
-                    <div class="card__container">  <!-- div vide de sens pour gérer le flex des cards -->
-                        <figure class="card">
-                            <a class="card__link" href="./photos/terminators-du-linceul_01_4640-2610.jpg" target="_blank"><img class="card__img" src="./photos/terminators-du-linceul_01_4640-2610.jpg?width=464" alt=""></a> 
-                            <figcaption class="card__desc">Unité de Terminators du Linceul de la Death guard</figcaption>
-                        </figure>
-                        <figure class="card">
-                            <a class="card__link" href="./photos/terminators-du-linceul_01_4640-2610.jpg" target="_blank"><img class="card__img" src="./photos/terminators-du-linceul_01_4640-2610.jpg?width=464" alt=""></a> 
-                            <figcaption class="card__desc">Unité de Terminators du Linceul de la Death guard</figcaption>
-                        </figure>
-                        <figure class="card">
-                            <a class="card__link" href="./photos/terminators-du-linceul_01_4640-2610.jpg" target="_blank"><img class="card__img" src="./photos/terminators-du-linceul_01_4640-2610.jpg?width=464" alt=""></a> 
-                            <figcaption class="card__desc">Unité de Terminators du Linceul de la Death guard</figcaption>
-                        </figure>
+                    <div class="card__container">  <!-- div vide de sens pour gérer le display des cards -->
+                        <article class="card">  <!-- article pour 1 photo et sa légende -->
+                            <a class="card__link" href="./photos/terminators-du-linceul_01_4640-2610.jpg" target="_blank">  <!-- lien vers la photo sur l'ensemble de l'article (photo + titre) -->
+                                <figure class="card__item">
+                                    <img class="card__img" src="./photos/terminators-du-linceul_01_4640-2610.jpg" alt=""> 
+                                    <figcaption class="card__desc">Unité de Terminators du Linceul de la Death guard</figcaption>
+                                </figure>
+                            </a>
+                        </article>
                     </div>
             </section>
             <section class="segment">  <!-- Section pour les vidéos, à voir combien en afficher sur cette page -->

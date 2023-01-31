@@ -1,3 +1,6 @@
+@use './var';
+@use 'sass:color';
+
 * {
     box-sizing: border-box;
 }
@@ -5,7 +8,7 @@
 body {
     line-height: 1.4;
     font-family: serif;
-    background-color: rgba(42, 40, 43, 0.87);
+    background: linear-gradient(to bottom, var.$background-color, color.scale(var.$background-color, $lightness: -50%) 33%, color.scale(var.$background-color, $lightness: -50%) 66%, var.$background-color);
     color: rgba(200, 200, 200, 0.8);
 }
 
