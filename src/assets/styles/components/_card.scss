@@ -1,0 +1,36 @@
+.card {
+    margin: 1rem auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #444;
+    box-shadow: -2px 0px 10px 5px #000000,
+                2px 0px 10px 5px #000000,
+                0px 2px 10px 5px #000000,
+                0px -2px 10px 5px #000000;
+    overflow: hidden;  /* permet d'appliquer le border-radius sur l'image à l'intérieur */
+    
+    &:hover {
+        //
+        box-shadow:inset -4px 0px 10px 5px #000000,
+                inset 4px 0px 10px 5px #000000,
+                inset 0px 4px 10px 5px #000000,
+                inset 0px -4px 10px 5px #000000;
+                
+    }
+
+    &__container {
+        display: grid;
+        margin: auto;
+    }
+
+    &__desc {
+        font-size: 0.8rem;
+        color: #2ECB32;
+        text-align: center;
+    }
+}
+
+
+
+
+

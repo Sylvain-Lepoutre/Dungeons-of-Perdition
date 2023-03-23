@@ -1,0 +1,21 @@
+@use '../var';
+
+.main-nav {
+    width: 90%;
+    margin: 1rem auto;
+    
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        margin: auto;
+        padding: 0.5em 3em;
+    }
+
+    &__item {
+        font-size: 2em;
+        margin: 0.5rem;
+        display: inline-block;
+        color: var.$color-main;
+    }
+}
