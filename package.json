@@ -5,16 +5,22 @@
   "source": "./src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build --no-cache"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
-    "parcel": "^2.8.2"
+    "parcel": "^2.8.2",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "parcel-reporter-static-files-copy": "^1.5.0"
   },
   "dependencies": {
     "reset-css": "^5.0.1"
+  },
+  "staticFiles": {
+    "staticPath": "./src/assets/img",
+    "watcherGlob": "**"
   }
 }
