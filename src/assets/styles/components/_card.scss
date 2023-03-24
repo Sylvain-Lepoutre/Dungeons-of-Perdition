@@ -10,7 +10,6 @@
     overflow: hidden;  /* permet d'appliquer le border-radius sur l'image à l'intérieur */
     
     &:hover {
-        //
         box-shadow:inset -4px 0px 10px 5px #000000,
                 inset 4px 0px 10px 5px #000000,
                 inset 0px 4px 10px 5px #000000,
@@ -19,8 +18,14 @@
     }
 
     &__container {
-        display: grid;
         margin: auto;
+    }
+
+    &__item {
+        box-shadow:inset -4px 0px 10px 5px #000000,
+        inset 4px 0px 10px 5px #000000,
+        inset 0px 4px 10px 5px #000000,
+        inset 0px -4px 10px 5px #000000;
     }
 
     &__desc {
@@ -28,6 +33,8 @@
         color: #2ECB32;
         text-align: center;
     }
+
+
 }
 
 

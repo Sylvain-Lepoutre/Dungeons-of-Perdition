@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galerie Photos - Dungeons of Perdition</title>
+    <meta name="author" content="Sylvain Lepoutre">
+    <meta name="description" content="">  <!-- Revenir dessus plus tard -->
+    <link rel="shortcut icon" href="/src/assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/assets/styles/index.scss">
+    <script src="/src/assets/script/appGalerie.js" defer type="module"></script>
 </head>
 <body>
-    
+    <header class="banner">
+        <div class="banner__group">
+            <h1 class="banner__title">Dungeons of Perdition</h1>
+            <h2 class="banner__sub">Miniature Painting</h2>
+        </div>
+                <section class="main-nav">
+        <nav>  <!-- Menu de navigation commun à toutes les pages -->
+            <ul class="main-nav__list" >
+                <li><a class="main-nav__item" href="/src/index.html">Accueil</a></li>
+                <li><a class="main-nav__item" href="/src/pages/photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </section>
+    </header>
+    <main>
+        <section class="segment">  <!-- Section pour les dernières photos -->
+            <a class="segment__link" href="/src/pages/photos.html"><h2 class="segment__title">Photos récentes</h2></a>   <!-- Lien qui mène à la gallerie photo -->
+                <div class="card__container">  <!-- div vide de sens pour gérer le display des cards -->
+
+                </div>
+        </section>
 </body>
 </html>
