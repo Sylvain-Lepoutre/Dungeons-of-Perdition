@@ -56,7 +56,7 @@ export default [
   {
     id: 10,
     title: 'Vargskyr',
-    path: 'https://cdn.discordapp.com/attachments/1062013013374287883/1088497756366188625/vargskyr.jpg', // Test avec un lien
+    path: '/photos/vargskyr.jpg',
     // keywords: [' ', ' ', ' ', ' '],
   },
   {
