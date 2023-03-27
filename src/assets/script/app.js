@@ -37,68 +37,80 @@ displayPhotos.forEach(element => {
     linkElt.appendChild(figureElt);
     figureElt.appendChild(imgElt);
     figureElt.appendChild(figcaptionElt);
-
-    // Création du bouton précédent
-    const prevPhotoBtnElt = document.createElement("button");
-    prevPhotoBtnElt.setAttribute("type", "button");
-    prevPhotoBtnElt.setAttribute("title", "Précédent");
-    prevPhotoBtnElt.classList.add("card__btn", "card__btn--left");
-    prevPhotoBtnElt.innerHTML = "&lsaquo;";
-
-    // Création du bouton suivant
-    const nextPhotoBtnElt = document.createElement("button");
-    nextPhotoBtnElt.setAttribute("type", "button");
-    nextPhotoBtnElt.setAttribute("title", "Suivant");
-    nextPhotoBtnElt.classList.add("card__btn", "card__btn--right");
-    nextPhotoBtnElt.innerHTML = "&rsaquo;";
-
-    // Ajout des boutons dans le DOM
-    figureElt.appendChild(prevPhotoBtnElt);
-    figureElt.appendChild(nextPhotoBtnElt);
 });
+
+// Création du bouton précédent
+const prevPhotoBtnElt = document.createElement("button");
+prevPhotoBtnElt.setAttribute("type", "button");
+prevPhotoBtnElt.setAttribute("title", "Précédent");
+prevPhotoBtnElt.classList.add("card__btn", "card__btn--left");
+prevPhotoBtnElt.innerHTML = "&lsaquo;";
+
+// Création du bouton suivant
+const nextPhotoBtnElt = document.createElement("button");
+nextPhotoBtnElt.setAttribute("type", "button");
+nextPhotoBtnElt.setAttribute("title", "Suivant");
+nextPhotoBtnElt.classList.add("card__btn", "card__btn--right");
+nextPhotoBtnElt.innerHTML = "&rsaquo;";
+
+// Ajout des boutons dans le DOM
+cardContainerElt.appendChild(prevPhotoBtnElt);
+cardContainerElt.appendChild(nextPhotoBtnElt);
+
+
 
 // Gestion du slider de photos
-// Récupération des photos, ainsi que des boutons
-const allPhotos = cardContainerElt.querySelectorAll('.card');
-const allPrevPhotoBtns = document.querySelectorAll('.card__btn--left');
-const allNextPhotoBtns = document.querySelectorAll('.card__btn--right');
+// Récupération des cards, ainsi que des boutons
+const allCardsElt = cardContainerElt.querySelectorAll('.card');
+const prevPhotoBtn = document.querySelector("body > main > section > div > button.card__btn.card__btn--left");
+const nextPhotoBtn = document.querySelector("body > main > section > div > button.card__btn.card__btn--right");
 
-// Définition de l'index de la photo courante
-let currentPhoto = 0;
+// Définition de l'index de la card courante
+let currentIndexCard = 0;
 
-// Fonction pour afficher une photo
-function showPhoto(index) {
-    allPhotos.forEach((photo) => {
-        photo.classList.remove('card--active');
+
+// Fonction pour afficher les cards
+function showCard(index) {
+    // Suppression de la classe "card--active" sur toutes les cards
+    allCardsElt.forEach((card) => {
+        card.classList.remove('card--active');
     });
-    allPhotos[index].classList.add('card--active');
-}
+    // Si la largeur de l'écran est supérieure à 960px, afficher 2 cards à la fois
+    if (window.matchMedia('(min-width: 960px)').matches) {
+        // Définition de l'index de la card suivante (ou de la première card si on est à la fin du tableau)
+        let nextIndex = index + 1 < allCardsElt.length ? index + 1 : 0;
+        // Ajout de la classe "card--active" sur les 2 cards
+        allCardsElt[index].classList.add('card--active');
+        allCardsElt[nextIndex].classList.add('card--active');
+    } else {
+        // Sinon, afficher une seule card
+        allCardsElt[index].classList.add('card--active');
+    }
+};
 
-// Ecouteur d'événement sur les bouton "previous" pour faire défiler à la photo précédente
-allPrevPhotoBtns.forEach(element => {
-    element.addEventListener('click', (event) => {
+// Ecouteur d'événement sur les bouton "previous" pour faire défiler à la card précédente
+prevPhotoBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        currentPhoto--;
-        if (currentPhoto < 0) {
-            currentPhoto = allPhotos.length - 1;
+        currentIndexCard--;
+        if (currentIndexCard < 0) {
+            currentIndexCard = allCardsElt.length - 1;
         }
-        showPhoto(currentPhoto);
+        showCard(currentIndexCard);
     });
-});
 
-// Ecouter d'évènement sur les boutons "next" pour faire défiler à la photo suivante
-allNextPhotoBtns.forEach(element => {
-    element.addEventListener('click', (event) => {
+// Ecouter d'évènement sur les boutons "next" pour faire défiler à la card suivante
+nextPhotoBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        currentPhoto++;
-        if (currentPhoto >= allPhotos.length) {
-            currentPhoto = 0;
+        currentIndexCard++;
+        if (currentIndexCard >= allCardsElt.length) {
+            currentIndexCard = 0;
         }
-        showPhoto(currentPhoto);
-    })
-})
+        showCard(currentIndexCard);
+        console.log(currentIndexCard);
+    });
 
-// Affichage initial de la première photo
-showPhoto(currentPhoto);
+
+// Affichage initial de la première card
+showCard(currentIndexCard);
 
 
