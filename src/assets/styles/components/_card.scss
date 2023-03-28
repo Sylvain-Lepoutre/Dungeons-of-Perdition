@@ -27,6 +27,15 @@
 
     &--active {
         display: block;
+
+        // Pour gérer l'ordre d'affichage avec plusieurs card à afficher
+        &--left {
+            order: 1;
+        }
+        
+        &--right {
+            order: 2;
+        }
     }
 
     &__container {

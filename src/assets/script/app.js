@@ -71,21 +71,27 @@ let currentIndexCard = 0;
 
 // Fonction pour afficher les cards
 function showCard(index) {
-    // Suppression de la classe "card--active" sur toutes les cards
+    // Suppression des class sur toutes les cards
     allCardsElt.forEach((card) => {
-        card.classList.remove('card--active');
+        card.classList.remove('card--active', 'card--active--left', 'card--active--right');
     });
     // Si la largeur de l'écran est supérieure à 960px, afficher 2 cards à la fois
     if (window.matchMedia('(min-width: 960px)').matches) {
         // Définition de l'index de la card suivante (ou de la première card si on est à la fin du tableau)
         let nextIndex = index + 1 < allCardsElt.length ? index + 1 : 0;
-        // Ajout de la classe "card--active" sur les 2 cards
+        // Ajout de la classe 'card--active' sur 2 cards
         allCardsElt[index].classList.add('card--active');
         allCardsElt[nextIndex].classList.add('card--active');
+        // Si l'index de la la carte suivante est 0 alors j'attribue une classe '--right' et '--left' pour gérer la disposition
+        if (nextIndex === 0) {
+            allCardsElt[index].classList.add('card--active--left');
+            allCardsElt[nextIndex].classList.add('card--active--right');
+        } 
     } else {
         // Sinon, afficher une seule card
         allCardsElt[index].classList.add('card--active');
     }
+    
 };
 
 // Ecouteur d'événement sur les bouton "previous" pour faire défiler à la card précédente
@@ -112,5 +118,3 @@ nextPhotoBtn.addEventListener('click', (event) => {
 
 // Affichage initial de la première card
 showCard(currentIndexCard);
-
-
