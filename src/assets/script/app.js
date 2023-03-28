@@ -116,5 +116,11 @@ nextPhotoBtn.addEventListener('click', (event) => {
     });
 
 
-// Affichage initial de la première card
+
+// Affichage initial des cards
 showCard(currentIndexCard);
+
+// Appel de la fonction lors du resize
+window.addEventListener('resize', (event) => {
+    showCard(currentIndexCard);
+})
