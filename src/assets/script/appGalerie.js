@@ -1,3 +1,5 @@
+// En chantier
+
 import photos from './data.js'
 
 console.log(photos);
@@ -39,3 +41,6 @@ for (const element of photos) {
     figureElt.appendChild(imgElt);
     figureElt.appendChild(figcaptionElt);
     };
+
+
+

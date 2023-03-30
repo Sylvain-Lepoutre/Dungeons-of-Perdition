@@ -73,47 +73,72 @@ let currentIndexCard = 0;
 function showCard(index) {
     // Suppression des class sur toutes les cards
     allCardsElt.forEach((card) => {
-        card.classList.remove('card--active', 'card--active--left', 'card--active--right');
+        card.classList.remove('card--active', 'card--active--left', 'card--active--right', 'card--active--center');
     });
-    // Si la largeur de l'écran est supérieure à 960px, afficher 2 cards à la fois
-    if (window.matchMedia('(min-width: 960px)').matches) {
-        // Définition de l'index de la card suivante (ou de la première card si on est à la fin du tableau)
+
+    // Si la largeur de l'écran est supérieure à 1440px, afficher 3 cards à la fois
+    if (window.matchMedia('(min-width: 1440px)').matches) {
         let nextIndex = index + 1 < allCardsElt.length ? index + 1 : 0;
-        // Ajout de la classe 'card--active' sur 2 cards
+        let nextNextIndex = nextIndex + 1 < allCardsElt.length ? nextIndex + 1 : 0;
+
         allCardsElt[index].classList.add('card--active');
         allCardsElt[nextIndex].classList.add('card--active');
+        allCardsElt[nextNextIndex].classList.add('card--active');
+
+        // Si l'index de la 3e card affichée est 0 alors j'attribue des classe 'left', 'center' et 'right' pour gérer la disposition
+        if (nextNextIndex === 0) {
+            allCardsElt[index].classList.add('card--active--left');
+            allCardsElt[nextIndex].classList.add('card--active--center');
+            allCardsElt[nextNextIndex].classList.add('card--active--right');
+            // De même si la 2e image est l'index 0
+        } else if (nextIndex === 0) {
+            allCardsElt[index].classList.add('card--active--left');
+            allCardsElt[nextIndex].classList.add('card--active--center');
+            allCardsElt[nextNextIndex].classList.add('card--active--right');
+        }
+    }
+
+    // Si la largeur de l'écran est supérieure à 800px mais inférieure ou égale à 1440px, afficher 2 cards à la fois
+    else if (window.matchMedia('(min-width: 800px)').matches) {
+        let nextIndex = index + 1 < allCardsElt.length ? index + 1 : 0;
+
+        allCardsElt[index].classList.add('card--active');
+        allCardsElt[nextIndex].classList.add('card--active');
+
         // Si l'index de la la carte suivante est 0 alors j'attribue une classe '--right' et '--left' pour gérer la disposition
         if (nextIndex === 0) {
             allCardsElt[index].classList.add('card--active--left');
             allCardsElt[nextIndex].classList.add('card--active--right');
-        } 
-    } else {
-        // Sinon, afficher une seule card
+        }
+    }
+
+    // Sinon, afficher une seule card
+    else {
         allCardsElt[index].classList.add('card--active');
     }
-    
-};
+}
+
 
 // Ecouteur d'événement sur les bouton "previous" pour faire défiler à la card précédente
 prevPhotoBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        currentIndexCard--;
-        if (currentIndexCard < 0) {
-            currentIndexCard = allCardsElt.length - 1;
-        }
-        showCard(currentIndexCard);
-    });
+    event.preventDefault();
+    currentIndexCard--;
+    if (currentIndexCard < 0) {
+        currentIndexCard = allCardsElt.length - 1;
+    }
+    showCard(currentIndexCard);
+});
 
 // Ecouter d'évènement sur les boutons "next" pour faire défiler à la card suivante
 nextPhotoBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        currentIndexCard++;
-        if (currentIndexCard >= allCardsElt.length) {
-            currentIndexCard = 0;
-        }
-        showCard(currentIndexCard);
-        console.log(currentIndexCard);
-    });
+    event.preventDefault();
+    currentIndexCard++;
+    if (currentIndexCard >= allCardsElt.length) {
+        currentIndexCard = 0;
+    }
+    showCard(currentIndexCard);
+    console.log(currentIndexCard);
+});
 
 
 
