@@ -44,14 +44,14 @@ const prevPhotoBtnElt = document.createElement("button");
 prevPhotoBtnElt.setAttribute("type", "button");
 prevPhotoBtnElt.setAttribute("title", "Précédent");
 prevPhotoBtnElt.classList.add("card__btn", "card__btn--left");
-prevPhotoBtnElt.innerHTML = "&lsaquo;";
+prevPhotoBtnElt.innerHTML = "&lsaquo;"; //TODO Modifier le symbole
 
 // Création du bouton suivant
 const nextPhotoBtnElt = document.createElement("button");
 nextPhotoBtnElt.setAttribute("type", "button");
 nextPhotoBtnElt.setAttribute("title", "Suivant");
 nextPhotoBtnElt.classList.add("card__btn", "card__btn--right");
-nextPhotoBtnElt.innerHTML = "&rsaquo;";
+nextPhotoBtnElt.innerHTML = "&rsaquo;"; //TODO Modifier le symbole
 
 // Ajout des boutons dans le DOM
 cardContainerElt.appendChild(prevPhotoBtnElt);
@@ -62,9 +62,8 @@ cardContainerElt.appendChild(nextPhotoBtnElt);
 // Gestion du slider de photos
 // Récupération des cards, ainsi que des boutons
 const allCardsElt = cardContainerElt.querySelectorAll('.card');
-const prevPhotoBtn = document.querySelector("body > main > section > div > button.card__btn.card__btn--left");
-const nextPhotoBtn = document.querySelector("body > main > section > div > button.card__btn.card__btn--right");
-
+const prevPhotoBtn = document.querySelector(".card__btn--left");
+const nextPhotoBtn = document.querySelector(".card__btn--right");
 // Définition de l'index de la card courante
 let currentIndexCard = 0;
 

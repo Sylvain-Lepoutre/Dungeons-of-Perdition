@@ -1,11 +1,15 @@
 @use '../var';
+@use '../mixin';
 
 .banner {
     font-family: Chiller;
     text-align: center;
-    // background-image: url('/src/assets/img/banner2.png');
-    // background-size: cover;
-    // background-position: center center;
+    // TODO opacité de l'image
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 33%, rgba(0, 0, 0, 0.4) 66%, rgba(0, 0, 0, 0) 100%),
+    url('/src/assets/img/banner2.png');
+    background-size: cover;
+    
+    background-position: center center;
 
 
 
@@ -28,13 +32,13 @@
 
     &__title {
         padding: 1rem;
-        font-size: 5em;
+        font-size: 3em;
         font-weight: bold;
         
     }
 
     &__sub {
-        font-size: 3em;
+        font-size: 1.5em;
         font-weight: bold;
     }
 }

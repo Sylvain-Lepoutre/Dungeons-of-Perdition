@@ -1,14 +1,23 @@
+@use '../var';
+@use '../mixin';
+@use 'sass:color';
+
+
+
+
 .segment {
     width: 90%;
     margin: 1rem auto;
 
-    &__link {
-        width: 40%;
-    }
-
     &__title {
+        color: var.$color-main;
+        @include mixin.box;
+        background: var.$background-color-button;
         display: flex;
+        padding: 0.5em;
+        margin: 1.5em auto;
         justify-content: center;
         font-size: 1.25rem;
+        font-family: Chiller;
     }
 }

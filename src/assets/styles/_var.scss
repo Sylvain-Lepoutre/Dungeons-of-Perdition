@@ -1,3 +1,8 @@
+@use 'sass:color';
+
+
 $color-main: #0b851f;
 
 $background-color : #343541;
+
+$background-color-button : linear-gradient(to bottom, #cfcdA8, color.scale(#cfcdA8, $lightness: +50%) 33%, color.scale(#cfcdA8, $lightness: +50%) 66%, #cfcdA8);

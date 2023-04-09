@@ -1,31 +1,37 @@
+@use '../var';
 @use '../mixin';
-
+@use 'sass:color';
 
 .card {
     margin: 1rem auto;
-    border: 1px solid black;
-    border-radius: 10px;
+    @include mixin.box;
+    // border: 1px solid black;
+    // border-radius: 10px;
     background-color: #444;
     display: none; //TODO remettre
     // box-shadow: -2px 0px 10px 5px #000000,
-    //             2px 0px 10px 5px #000000,
-    //             0px 2px 10px 5px #000000,
-    //             0px -2px 10px 5px #000000;
-    // overflow: hidden;  /* permet d'appliquer le border-radius sur l'image à l'intérieur */
+    //     2px 0px 10px 5px #000000,
+    //     0px 2px 10px 5px #000000,
+    //     0px -2px 10px 5px #000000;
+    overflow: hidden;
+    /* permet d'appliquer le border-radius sur l'image à l'intérieur */
 
-    // &:hover {
-    //     box-shadow:inset -4px 0px 10px 5px #000000,
-    //             inset 4px 0px 10px 5px #000000,
-    //             inset 0px 4px 10px 5px #000000,
-    //             inset 0px -4px 10px 5px #000000;
+    &:hover {
+        scale: 1.1;
+        box-shadow: -4px 0px 50px 5px #000000,
+            4px 0px 50px 5px #000000,
+            0px 4px 50px 5px #000000,
+            0px -4px 50px 5px #000000;
+    }
 
-        @include mixin.medium {
-            width: calc(50% - 2rem);
-        }
+    @include mixin.medium {
+        width: calc(50% - 2rem);
+    }
 
-        @include mixin.big {
-            width: calc(33% - 2rem);
-        }
+    @include mixin.big {
+        width: calc(33% - 2rem);
+    }
+
     // }
 
     &--active {
@@ -35,7 +41,7 @@
         &--left {
             order: 1;
         }
-        
+
         &--center {
             order: 2;
         }
@@ -56,18 +62,12 @@
         }
     }
 
-    // &__item {
-    //     position: relative;
-        //     box-shadow:inset -4px 0px 10px 5px #000000,
-        //     inset 4px 0px 10px 5px #000000,
-        //     inset 0px 4px 10px 5px #000000,
-        //     inset 0px -4px 10px 5px #000000;
-    // }
-
     &__desc {
         font-size: 0.8rem;
-        color: #2ECB32;
+        color: var.$color-main;
         text-align: center;
+        background: var.$background-color-button;
+        margin-top: -0.5em;
     }
 
     &__btn {
