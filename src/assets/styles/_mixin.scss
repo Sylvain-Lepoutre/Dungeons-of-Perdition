@@ -19,3 +19,26 @@
     0px 2px 10px 5px #000000,
     0px -2px 10px 5px #000000;
 }
+
+@mixin boxHover{
+    scale: 1.1;
+    box-shadow: -4px 0px 50px 5px #000000,
+        4px 0px 50px 5px #000000,
+        0px 4px 50px 5px #000000,
+        0px -4px 50px 5px #000000;
+}
+
+
+@mixin glow{
+    text-shadow: 0 0 5px #FFF,
+    0 0 10px #FFF,
+    0 0 15px #FFF,
+    0 0 20px #49ff18,
+    0 0 30px #49FF18,
+    0 0 40px #49FF18,
+    0 0 55px #49FF18,
+    0 0 75px #49ff18,
+    0 0 90px #49ff18,
+    0 0 110px #49ff18,
+    0 0 130px #49ff18;
+}

@@ -2,22 +2,19 @@
 @use '../mixin';
 @use 'sass:color';
 
-
-
-
 .segment {
     width: 90%;
     margin: 1rem auto;
 
     &__title {
-        color: var.$color-main;
-        @include mixin.box;
-        background: var.$background-color-button;
         display: flex;
+        @include mixin.box;
         padding: 0.5em;
         margin: 1.5em auto;
-        justify-content: center;
-        font-size: 1.25rem;
         font-family: Chiller;
+        font-size: 1.25rem;
+        color: var.$color-main;
+        justify-content: center;
+        background: var.$background-color-button;
     }
 }
