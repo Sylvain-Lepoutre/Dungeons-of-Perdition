@@ -12,9 +12,13 @@
         padding: 0.5em;
         margin: 1.5em auto;
         font-family: Chiller;
-        font-size: 1.25rem;
+        font-size: 1em;
         color: var.$color-main;
         justify-content: center;
         background: var.$background-color-button;
+
+        @include mixin.medium {
+            font-size: 1.25em;
+        }
     }
 }

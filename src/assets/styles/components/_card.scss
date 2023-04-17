@@ -6,6 +6,7 @@
     @include mixin.box;
     margin: 1rem auto;
     display: none;
+    overflow: hidden; // pour arrondir les border de la card
 
     &:hover {
         @include mixin.boxHover
@@ -48,12 +49,14 @@
     }
 
     &__desc {
-        margin-top: -0.5em;
-        font-size: 0.8rem;
+        font-size: 1em;
         color: var.$color-main;
         text-align: center;
         background: var.$background-color-button;
-        margin-top: -0.5em;
+
+        @include mixin.medium {
+            font-size: 1.2em;
+        }
     }
 
     &__btn {

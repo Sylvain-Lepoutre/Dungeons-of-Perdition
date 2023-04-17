@@ -1,19 +1,19 @@
 export default [
   {
     id: 1,
-    title: ' ',
+    title: 'photo',
     path: '/photos/deathshroud-terminator-01.jpg',
     // keywords: [' ', ' ', ' ', ' '],
   },
   {
     id: 2,
-    title: ' ',
+    title: 'photo',
     path: '/photos/deathshroud-terminator-02.jpg',
     // keywords: [' ', ' ', ' ', ' '],
   },
   {
     id: 3,
-    title: ' ',
+    title: 'photo',
     path: '/photos/deathshroud-terminators.jpg',
     // keywords: [' ', ' ', ' ', ' '],
   },
@@ -23,18 +23,18 @@ export default [
     path: '/photos/plague-marine.jpg',
     // keywords: [' ', ' ', ' ', ' '],
   },
-  {
-    id: 5,
-    title: ' ',
-    path: '/photos/plague-marines-01.jpg',
-    // keywords: [' ', ' ', ' ', ' '],
-  },
-  {
-    id: 6,
-    title: ' ',
-    path: '/photos/plague-marines-02.jpg',
-    // keywords: [' ', ' ', ' ', ' '],
-  },
+  // {
+  //   id: 5,
+  //   title: 'photo',
+  //   path: '/photos/plague-marines-01.jpg',
+  //   // keywords: [' ', ' ', ' ', ' '],
+  // },
+  // {
+  //   id: 6,
+  //   title: 'photo',
+  //   path: '/photos/plague-marines-02.jpg',
+  //   // keywords: [' ', ' ', ' ', ' '],
+  // },
   {
     id: 7,
     title: 'Imperial Fist',

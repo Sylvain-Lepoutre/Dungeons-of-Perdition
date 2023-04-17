@@ -1,4 +1,6 @@
 @use './var';
+@use './mixin';
+
 @use 'sass:color';
 
 * {
@@ -7,7 +9,7 @@
 
 body {
     line-height: 1.4;
-    font-family: serif;
+    font-family: Chiller, serif; //TODO Enlever sur les sélécteurs si on garde ca
     background: linear-gradient(to bottom, var.$background-color, color.scale(var.$background-color, $lightness: -50%) 33%, color.scale(var.$background-color, $lightness: -50%) 66%, var.$background-color);
 }
 
@@ -22,3 +24,4 @@ img {
 iframe {
     max-width: 100%;
 }
+
