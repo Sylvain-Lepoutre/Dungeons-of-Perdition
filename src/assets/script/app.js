@@ -128,7 +128,7 @@ prevPhotoBtn.addEventListener('click', (event) => {
     showCard(currentIndexCard);
 });
 
-// Ecouter d'évènement sur les boutons "next" pour faire défiler à la card suivante
+// Ecouteur d'évènement sur les boutons "next" pour faire défiler à la card suivante
 nextPhotoBtn.addEventListener('click', (event) => {
     event.preventDefault();
     currentIndexCard++;
@@ -136,9 +136,26 @@ nextPhotoBtn.addEventListener('click', (event) => {
         currentIndexCard = 0;
     }
     showCard(currentIndexCard);
-    console.log(currentIndexCard);
 });
 
+// Ecouteur d'événement "keydown" à la fenêtre pour faire défiler les photos avec les touches de flèches gauche et droite
+window.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        currentIndexCard--;
+        if (currentIndexCard < 0) {
+            currentIndexCard = allCardsElt.length - 1;
+        }
+        showCard(currentIndexCard);
+    } else if (event.key === "ArrowRight") { 
+        event.preventDefault();
+        currentIndexCard++;
+        if (currentIndexCard >= allCardsElt.length) {
+            currentIndexCard = 0;
+        }
+        showCard(currentIndexCard);
+    }
+});
 
 
 // Affichage initial des cards
